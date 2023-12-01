@@ -1,0 +1,4 @@
+geopandas
+keplergl
+ipykernel
+osmnx
