@@ -1,8 +1,8 @@
 version: '3.8'
 services:
   service:
-    build: /home/stepan/PycharmProjects/TRKPO-service
+    image: spelinichenko/trkpo-service
     ports:
       - 8000:8001
   bot:
-    build: /home/stepan/PycharmProjects/TRKPO-bot
+    image: spelinichenko/trkpo-bot
