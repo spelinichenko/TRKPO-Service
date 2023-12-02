@@ -1,0 +1,8 @@
+version: '3.8'
+services:
+  service:
+    image: spelinichenko/trkpo-service
+    ports:
+      - 8000:8001
+  bot:
+    image: spelinichenko/trkpo-bot
