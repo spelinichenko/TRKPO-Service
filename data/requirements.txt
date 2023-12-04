@@ -1,5 +1,0 @@
-geopandas
-keplergl
-ipykernel
-osmnx
-pymongo
