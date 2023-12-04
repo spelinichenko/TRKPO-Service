@@ -18,7 +18,7 @@ class District(str, Enum):
     nevsky = "nevsky"
     petrogradsky = "petrogradsky"
     petrodvortsovy = "petrodvortsovy"
-    primorky = "primorky"
+    primorsky = "primorsky"
     pushkinsky = "pushkinsky"
     frunzensky = "frunzensky"
     central = "central"
