@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bot-deployment
+spec:
+  selector:
+    matchLabels:
+      app: bot
+  template:
+    metadata:
+      labels:
+        app: bot
+    spec:
+      containers:
+      - name: bot
+        image: spelinichenko/trkpo-bot
+        env:
+        - name: api_url
+          value: "http://192.168.59.109:31274"
