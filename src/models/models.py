@@ -13,9 +13,9 @@ class MainRequest(BaseModel):
 
 class MainResponse(BaseModel):
     street: str
-    coordinates: list[float]
     accuracy_address: str
     room_area: int
     room_price: int
     working_hours: str
     delivery: bool
+    link: str
