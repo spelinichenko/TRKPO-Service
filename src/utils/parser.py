@@ -1,14 +1,15 @@
 # DEPRECATED!!!
 
-from bs4 import BeautifulSoup
-import requests
-import time
 import random
+import time
+
+import requests
+from bs4 import BeautifulSoup
 
 headers = {"User-Agent": "Mozilla/5.0 (Windows NT 6.2; WOW32; rv:20.0) Gecko/20100101 Firefox/20.0"}
 result = set()
 
-main_page = requests.get(
+main_page = requests.get(  # noqa: S113
     "https://spb.cian.ru/snyat-pomeshenie-pod-obshepit/",
     headers=headers,
 )
@@ -17,8 +18,9 @@ time.sleep(random.randint(2, 10))
 for i in range(1, 14):
     print(f"-------------{i}------------")
 
-    page = requests.get(
-        f"https://spb.cian.ru/cat.php?deal_type=rent&engine_version=2&offer_type=offices&office_type%5B0%5D=4&p={i}&region=2",
+    page = requests.get(  # noqa: S113
+        f"https://spb.cian.ru/ \
+        cat.php?deal_type=rent&engine_version=2&offer_type=offices&office_type%5B0%5D=4&p={i}&region=2",
         headers=headers,
     )
     time.sleep(random.randint(2, 10))

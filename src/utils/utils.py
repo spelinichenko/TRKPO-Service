@@ -22,7 +22,9 @@ district_to_url = {
     District.vyborg: "148",
 }
 
+
 def get_dataframe_by_district(district: District) -> pd.DataFrame:
     return pd.read_excel(
-        f"https://spb.cian.ru/export/xls/offers/?deal_type=rent&district%5B0%5D={district_to_url[district]}&engine_version=2&offer_type=offices&office_type%5B0%5D=4"
+        f"https://spb.cian.ru/export/xls/offers/?deal_type=rent \
+        &district%5B0%5D={district_to_url[district]}&engine_version=2&offer_type=offices&office_type%5B0%5D=4"
     )
