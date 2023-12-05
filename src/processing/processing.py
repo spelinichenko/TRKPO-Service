@@ -18,6 +18,8 @@ def get_places(request: MainRequest) -> list[MainResponse]:
     cian_data = cian_data[
         cian_data["Площадь"] >= request.visitor_capacity * 2 + map_cafe_type_to_kitchen_area[request.cafe_type]
     ]
+    if len(cian_data) == 0:
+        return []
     geolocator = Photon()
     cian_data["geometry"] = cian_data.apply(lambda x: geolocator.geocode(x["Адрес"]), axis=1)
     cian_data["geometry"] = cian_data.apply(lambda x: Point(x.geometry.longitude, x.geometry.latitude), axis=1)
