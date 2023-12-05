@@ -19,8 +19,8 @@ for i in range(1, 14):
     print(f"-------------{i}------------")
 
     page = requests.get(  # noqa: S113
-        f"https://spb.cian.ru/ \
-        cat.php?deal_type=rent&engine_version=2&offer_type=offices&office_type%5B0%5D=4&p={i}&region=2",
+        "https://spb.cian.ru/"
+        f"cat.php?deal_type=rent&engine_version=2&offer_type=offices&office_type%5B0%5D=4&p={i}&region=2",
         headers=headers,
     )
     time.sleep(random.randint(2, 10))

@@ -12,7 +12,6 @@ class District(str, Enum):
     kolpinsky = "kolpinsky"
     krasnogvardeisky = "krasnogvardeisky"
     krasnoselsky = "krasnoselsky"
-    kronstadt = "kronstadt"
     kurortny = "kurortny"
     moscow = "moscow"
     nevsky = "nevsky"
