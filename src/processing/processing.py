@@ -22,6 +22,9 @@ def get_places(request: MainRequest) -> list[MainResponse]:
         return []
     geolocator = Photon()
     cian_data["geometry"] = cian_data.apply(lambda x: geolocator.geocode(x["Адрес"]), axis=1)
+    cian_data = cian_data.dropna(subset=['geometry'])
+    if len(cian_data) == 0:
+        return []
     cian_data["geometry"] = cian_data.apply(lambda x: Point(x.geometry.longitude, x.geometry.latitude), axis=1)
     cian_data_gdf = gpd.GeoDataFrame(cian_data, geometry=cian_data["geometry"], crs="EPSG:4326")
     cian_data_gdf = cian_data_gdf.to_crs(cian_data_gdf.estimate_utm_crs())
